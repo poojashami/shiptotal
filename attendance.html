@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script type="text/javascript" src="./js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="event">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="form-title">
+                    <div class="text-center fs-5 ">Employee Attendance</div>
+                </div>
+                <div class="row p-2">
+
+                    <div class="col-md-3 app-form">
+                        <div class="form-floating">
+                            <input type="month" class="form-control" id="monthCalendar" placeholder="abc" required>
+                            <label for="monthCalendar">Select Date</label>
+                        </div>
+                    </div>
+                    <form action="" class="app-form needs-validation" novalidate onsubmit="return validateForm()">
+                        <div class="row align-items-center">
+                            <!-- Left side for the date field -->
+                            <div class="col-md-3">
+                                <div class="form-floating">
+                                    <input type="date" class="form-control" id="monthCalendar" placeholder="abc"
+                                        required>
+                                    <label for="monthCalendar">Select Date</label>
+                                </div>
+                            </div>
+
+                            <!-- Right side with some gap between fields -->
+                            <div class="col-md-3"> <!-- Adjusted offset to add a gap -->
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" placeholder="abc" required>
+                                    <label for="name">Name</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-floating">
+                                    <label for="empStatus" class="form-label">Attendance Type</label>
+                                    <select class="form-select" id="empStatus" required>
+                                        <option value="" disabled selected>Select</option>
+                                        <option value="absent">Absent</option>
+                                        <option value="present">Present</option>
+                                        <option value="sickleave">Sick Leave</option>
+                                        <option value="casualleave">Casual Leave</option>
+                                        <option value="annualleave">Annual Leave</option>
+                                        <option value="maternityleave">Maternity Leave</option>
+                                        <option value="leavewithoutpay">Leave without Pay</option>
+                                        <option value="holiday">Holiday</option>
+
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <button type="submit" class="btn text-white" style=" background:#000080;">Save</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="col-md-12 mt-3" style="overflow-x: auto;">
+                        <table id="dynamicTable">
+                            <thead>
+                                <tr id="tableHeadings">
+                                    <td>Employee Name</td>
+                                </tr>
+
+                            </thead>
+
+
+                            <!-- Add your table content here -->
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Set the default value of monthCalendar to the current month
+            var currentDate = new Date();
+            var currentMonth = currentDate.toISOString().slice(0, 7);
+            $("#monthCalendar").val(currentMonth);
+
+            // Function to update table headings based on the selected month
+            function updateTableHeadings() {
+                var selectedMonth = $("#monthCalendar").val();
+                var numberOfDays = new Date(selectedMonth + "-01").getMonthDays();
+
+                $("#tableHeadings").empty();
+
+                // Add employee name column
+                $("#tableHeadings").append("<th>Employee Name</th>");
+
+                // Add weekday names as table headings
+                for (var i = 1; i <= numberOfDays; i++) {
+                    var currentDate = new Date(selectedMonth + "-" + i);
+                    var weekdayName = getWeekdayName(currentDate.getDay());
+                    $("#tableHeadings").append("<th>" + i + "<br>" + weekdayName + "</th>");
+                }
+            }
+
+            function getWeekdayName(dayIndex) {
+                var weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+                return weekdays[dayIndex];
+            }
+
+            Date.prototype.getMonthDays = function () {
+                var d = new Date(this.getFullYear(), this.getMonth() + 1, 0);
+                return d.getDate();
+            };
+
+            // Bind the change event to updateTableHeadings
+            $("#monthCalendar").change(updateTableHeadings);
+
+            // Initial call to updateTableHeadings
+            updateTableHeadings();
+        });
+    </script>
+</body>
+
+</html>

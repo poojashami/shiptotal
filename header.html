@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha384-ezFHRu3hDsZ3b4lVwNS7cJ9tWweC2U+h5q17N7bL5l05YYLzPqpr6f+jG89L1x2h" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Form</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg nav-color fixed-top">
+        <div class="container-fluid d-flex align-items-center justify-content-between container-1600">
+
+            <a class="navbar-brand" href="#shiptotal"><img src="./image/shiptotoal_logo.jpeg" alt="Shiptotal-logo"
+                    height="40"></a>
+
+            <!-- Add a button for toggling navigation on smaller screens -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav ms-auto fw-bold">
+                    <li class="nav-item">
+                        <a class="nav-link scrollto active" href="./employee.html">Employee</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./customer.html">Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./salary.html">Salary Slip</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./shipping.html">SPM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./attendance.html">Attendance Sheet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./bill.html">Bill</a>
+                    </li>
+                    <!-- <li class="nav-link"><a href="#"><i class="bi bi-person-fill"></i></a></li> -->
+                    <!-- <li class="profile-user">
+                        <a href="#" id="toggleNavbar">
+                            <i class="fas fa-user" style="font-size: 20px; color: #0000ff85;"></i>
+                        </a>
+                    </li> -->
+                </ul>
+            </div>
+
+
+
+        </div>
+    </nav>
+
+    <script>
+        // jQuery script to toggle the collapse when the user clicks on the user icon
+        $(document).ready(function () {
+            $("#toggleNavbar").click(function () {
+                $("#navbarText").collapse('toggle');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

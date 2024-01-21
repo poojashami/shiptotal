@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script type="text/javascript" src="./js/index.js"></script>
+
+
+</head>
+
+<body>
+    <div id="header"></div>
+    <!-- <iframe src="./header.html" width="100%" height="65"></iframe> -->
+    <div class="event">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="form-title">
+                    <div class="text-center fs-5 ">Employee Master</div>
+                </div>
+                <form action="" class="app-form needs-validation" novalidate onsubmit="return validateForm()">
+                    <div class="row g-3 row-pad">
+                        <div class="text-start heading-color"><u>Employee Details</u> </div>
+
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="empId" placeholder="abc" required>
+                                <label for="empId">Employee ID</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="empName" placeholder="name" required>
+                                <label for="empName">Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="designation" placeholder="abc" required>
+                                <label for="designation">Designation</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="date" class="form-control" id="dateofJoining" placeholder="abc" required>
+                                <label for="dateofJoining">Date of Joining</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control validate-numeric" id="mobileNo" placeholder="abc"
+                                    required>
+                                <label for="mobileNo">Mobile No.</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="companyEmail"
+                                        placeholder="abc@example.com" required
+                                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                                    <label for="companyEmail">Company Email ID</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="personalEmail"
+                                    placeholder="abc@example.com" required
+                                    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                                <label for="personalEmail">Personal Email ID</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="fatherSpouce" placeholder="Enter remarks"
+                                    required></input>
+                                <label for="fatherSpouce">Father / Spouse</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="department" placeholder="abc" required>
+                                <label for="department">Department </label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control validate-numeric" id="adharNo" placeholder="abc"
+                                    maxlength="12" required>
+                                <label for="adharNo">Adhar No.</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control " id="panNo" placeholder="abc" required>
+                                <label for="panNo">PAN</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control validate-numeric" id="uanNo" placeholder="abc"
+                                    required>
+                                <label for="uanNo">UAN No.</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <label for="empType" class="form-label">Employee Type</label>
+                                <select class="form-select" id="employeeType" required>
+                                    <option value="" disabled selected>Select</option>
+                                    <option value="permanent">Permanent</option>
+                                    <option value="temporary">Temporary</option>
+                                    <option value="contractual"> Contractual</option>
+                                    <option value="trainee">Trainee</option>
+                                    <option value="onProbation">On Probation</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="workLocation" placeholder="abc" required>
+                                <label for="workLocation">Work Location</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <div class="select-btn form-control">
+                                    <span class="btn-text">Select</span>
+                                    <span class="arrow-dwn">
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </span>
+                                </div>
+                                <ul class="list-items">
+                                    <li class="item">
+                                        <span class="checkbox">
+                                            <input type="checkbox">
+                                        </span>
+                                        <span class="item-text">Tele Caller</span>
+                                    </li>
+                                    <li class="item">
+                                        <span class="checkbox">
+                                            <i class="fa-solid fa-check check-icon"></i>
+                                        </span>
+                                        <span class="item-text">Digital Marketing</span>
+                                    </li>
+                                    <li class="item">
+                                        <span class="checkbox">
+                                            <i class="fa-solid fa-check check-icon"></i>
+                                        </span>
+                                        <span class="item-text">Sea Pricing</span>
+                                    </li>
+                                    <li class="item">
+                                        <span class="checkbox">
+                                            <i class="fa-solid fa-check check-icon"></i>
+                                        </span>
+                                        <span class="item-text">Digital Marketing</span>
+                                    </li>
+                                    <li class="item">
+                                        <span class="checkbox">
+                                            <i class="fa-solid fa-check check-icon"></i>
+                                        </span>
+                                        <span class="item-text">W2W Pricing</span>
+                                    </li>
+                                    <li class="item">
+                                        <span class="checkbox">
+                                            <i class="fa-solid fa-check check-icon"></i>
+                                        </span>
+                                        <span class="item-text">Operation Sea</span>
+                                    </li>
+                                    <li class="item">
+                                        <span class="checkbox">
+                                            <i class="fa-solid fa-check check-icon"></i>
+                                        </span>
+                                        <span class="item-text">Operation Air</span>
+                                    </li>
+                                    <li class="item">
+                                        <span class="checkbox">
+                                            <i class="fa-solid fa-check check-icon"></i>
+                                        </span>
+                                        <span class="item-text">Operation W2W</span>
+                                    </li>
+                                    <li class="item">
+                                        <span class="checkbox">
+                                            <i class="fa-solid fa-check check-icon"></i>
+                                        </span>
+                                        <span class="item-text">Warehousing</span>
+                                    </li>
+                                    <li class="item">
+                                        <span class="checkbox">
+                                            <i class="fa-solid fa-check check-icon"></i>
+                                        </span>
+                                        <span class="item-text">Accounts</span>
+                                    </li>
+                                    <li class="item">
+                                        <span class="checkbox">
+                                            <i class="fa-solid fa-check check-icon"></i>
+                                        </span>
+                                        <span class="item-text">Dispatching</span>
+                                    </li>
+                                    <li class="item">
+                                        <span class="checkbox">
+                                            <i class="fa-solid fa-check check-icon"></i>
+                                        </span>
+                                        <span class="item-text">Data Operator</span>
+                                    </li>
+                                </ul>
+                                <label for="adharNo">Job Profile</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <label for="empStatus" class="form-label">Employee Status</label>
+                                <select class="form-select" id="empStatus" required>
+                                    <option value="" disabled selected>Select</option>
+                                    <option value="active">Active</option>
+                                    <option value="inactive">Inactive</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <label for="empStatus" class="form-label">Payment Options</label>
+                                <select class="form-select" id="empStatus" required>
+                                    <option value="" disabled selected>Select</option>
+                                    <option value="paid">Paid</option>
+                                    <option value="retail">Retail</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="password" placeholder="abc" required>
+                                <label for="password">Password</label>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="col-md-3 d-flex align-items-end">
+                            <div class="form-floating attachbtn">
+                                <input type="file" id="myFile" name="filename" multiple>
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-3 mt-4">
+                            <div class="form-floating">
+                                <textarea class="form-control" id="statusReason" placeholder="Enter remarks"
+                                    required></textarea>
+                                <label for="statusReason" class="text-field">Status Reason</label>
+                            </div>
+                        </div> -->
+
+
+                        <!-- bank border -->
+                        <div class="text-start heading-color mt-3"><u>Bank Details</u>
+                        </div>
+                        <!-- bank border -->
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="bankName" placeholder="abc" required>
+                                <label for="bankName">Bank Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="number" class="form-control validate-numeric" id="accoutNo"
+                                    placeholder="abc" required>
+                                <label for="accoutNo">Bank Account No.</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="ifscCode" placeholder="abc" required>
+                                <label for="ifscCode">IFSC Code</label>
+                            </div>
+                        </div>
+                        <!-- salary border -->
+                        <div class="text-start heading-color mt-3"><u>Salary Details</u>
+                        </div>
+                        <!-- salary border -->
+
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control validate-numeric" id="basicSalary"
+                                    placeholder="Enter basic salary" pattern="[0-9]+(\.[0-9]+)?"
+                                    title="Please enter only numeric values" required>
+                                <label for="basicSalary">Basic Salary</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control validate-numeric" id="HRA" placeholder="abc"
+                                    required>
+                                <label for="HRA">HRA</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control validate-numeric" id="specialAllowance"
+                                    placeholder="abc" required>
+                                <label for="specialAllowance">Special Allowance</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <label for="pfAccount" class="form-label">PF</label>
+                                <select class="form-select" id="pfAccount" required>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No" selected>No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control validate-numeric" id="pfAmount" placeholder="abc"
+                                    required disabled>
+                                <label for="pfAmount">PF Amount</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control validate-numeric" id="totalCTC" placeholder="abc"
+                                    required disabled>
+                                <label for="totalCTC">Total CTC </label>
+                            </div>
+                        </div>
+                        <div class="row mt-4 g-3">
+
+                            <div class="col-md-3 align-items-end">
+                                <div class="form-floating">
+                                    <textarea class="form-control text-field" id="currentAddress"
+                                        placeholder="Enter remarks" required></textarea>
+                                    <label for="currentAddress" class="text-field">Current Address</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="permanentAddress" placeholder="Enter remarks"
+                                        required></textarea>
+                                    <label for="permanentAddress" class="text-field">Permanent Address</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="remark" placeholder="Enter remarks"
+                                        required></textarea>
+                                    <label for="remark" class="text-field">Remark</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-start mt-3 heading-color"><u>Relative Details</u>
+                        </div>
+                        <div class="main-div">
+                            <div class="row">
+                                <div class="col-md-3 mt-3">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="relativeName" placeholder="abc"
+                                            required>
+                                        <label for="relativeName">Relative Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mt-3">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="relation" placeholder="abc"
+                                            required>
+                                        <label for="relation">Relation</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 mt-3">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control validate-numeric" id="relativeMobileNo"
+                                            placeholder="abc" required>
+                                        <label for="relativeMobileNo">Relative Mobile No.</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mt-3">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="relativeEmail" placeholder="abc"
+                                            required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                                        <label for="relativeEmail">Relative Email</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-1 d-flex align-items-center mt-3">
+                                    <div class="icon icon-plus" onclick="addRow(this)"><i class="fas fa-plus"></i>
+                                    </div>
+                                    <div class="icon icon-minus hidden" onclick="removeRow(this)"><i
+                                            class="fas fa-minus"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="justify-content-end  p-3 text-end">
+                        <button type="submit" class="btn btn-danger">Cancel</button>
+                        <button type="submit" class="btn btn-primary">submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const selectBtn = document.querySelector(".select-btn"),
+            items = document.querySelectorAll(".item");
+
+        selectBtn.addEventListener("click", () => {
+            selectBtn.classList.toggle("open");
+        });
+
+        items.forEach((item) => {
+            item.addEventListener("click", () => {
+                item.classList.toggle("checked");
+
+                let checked = document.querySelectorAll(".checked"),
+                    btnText = document.querySelector(".btn-text");
+
+                if (checked && checked.length > 0) {
+                    btnText.innerText = `${checked.length} Selected`;
+                } else {
+                    btnText.innerText = "Select";
+                }
+            });
+        });
+
+    </script>
+    <!-- checkbox dropdown -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var formControl = document.querySelector('.form-floating .select-btn');
+            var listItems = document.querySelector('.form-floating .list-items');
+
+            document.addEventListener('click', function (event) {
+                var isClickInside = formControl.contains(event.target) || listItems.contains(event.target);
+
+                if (!isClickInside) {
+                    listItems.style.display = 'none';
+                }
+            });
+
+            formControl.addEventListener('click', function () {
+                listItems.style.display = (listItems.style.display === 'none' || listItems.style.display === '') ? 'block' : 'none';
+            });
+        });
+    </script>
+    <script type='text/javascript'>
+        $(function () {
+
+            $("#basicSalary, #HRA, #specialAllowance, #pfAccount").on("keydown keyup change", sum);
+            function sum() {
+                var pfaccount = $("#pfAccount").val();
+                if (pfaccount == "Yes") {
+                    var pfamount = (($("#basicSalary").val()) * 12) / 100;
+                    $("#pfAmount").val(pfamount);
+                    $("#totalCTC").val(Number($("#basicSalary").val()) + Number($("#HRA").val()) + Number($("#specialAllowance").val()) + pfamount);
+                }
+                else {
+                    $("#pfAmount").val(0);
+                    $("#totalCTC").val(Number($("#basicSalary").val()) + Number($("#HRA").val()) + Number($("#specialAllowance").val()));
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

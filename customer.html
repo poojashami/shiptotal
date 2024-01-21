@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script type="text/javascript" src="./js/index.js"></script>
+
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <div class="event">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="form-title">
+                    <div class="text-center fs-5 ">Customer Master</div>
+                </div>
+                <form action="" class="app-form needs-validation" novalidate onsubmit="return validateForm()">
+                    <div class="row g-3 row-pad">
+                        <div class="text-start heading-color"><u>Customer Details</u> </div>
+
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="empId" placeholder="abc" required>
+                                <label for="empId">Customer ID</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="empName" placeholder="name" required>
+                                <label for="empName">Company Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="designation" placeholder="abc" required>
+                                <label for="designation">Contact Person</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control validate-numeric" id="mobileNo" placeholder="abc"
+                                    required>
+                                <label for="mobileNo">Mobile No.</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control validate-numeric" id="mobileNo" placeholder="abc"
+                                    required>
+                                <label for="mobileNo">Alt. Mobile No.</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="companyEmail"
+                                        placeholder="abc@example.com" required
+                                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                                    <label for="companyEmail">Email ID</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="companyEmail"
+                                        placeholder="abc@example.com" required
+                                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                                    <label for="companyEmail">Alt. Email ID</label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="dateofJoining" placeholder="abc" required>
+                                <label for="dateofJoining">Industry</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <label for="empType" class="form-label">Product Type</label>
+                                <select class="form-select" id="employeeType" required>
+                                    <option value="" disabled selected>Select</option>
+                                    <option value="permanent">Permanent</option>
+                                    <option value="temporary">Temporary</option>
+                                    <option value="contractual"> Contractual</option>
+                                    <option value="trainee">Trainee</option>
+                                    <option value="onProbation">On Probation</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="dateofJoining" placeholder="abc" required>
+                                <label for="dateofJoining">Monthly Potential</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="dateofJoining" placeholder="abc" required>
+                                <label for="dateofJoining">Expected Business</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="department" placeholder="abc" required>
+                                <label for="department">GSTIN with certificate </label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="mobileNo" placeholder="abc" required>
+                                <label for="mobileNo">Company PAN</label>
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-3">
+                            <div class="form-floating">
+                                <textarea class="form-control" id="fatherSpouce" placeholder="Enter remarks"
+                                    required></textarea>
+                                <label for="fatherSpouce">Others</label>
+                            </div>
+                        </div> -->
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <label for="country" class="form-label">Country</label>
+                                <select class="form-select" id="country" required onchange="enableState()">
+                                    <option value="" disabled selected>Select</option>
+                                    <option value="permanent">Permanent</option>
+                                    <option value="permanent">kjshdf</option>
+                                    <option value="permanent">lksadnlkn</option>
+                                    <option value="permanent">kdnkjdnjn</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <label for="state" class="form-label">State</label>
+                                <select class="form-select" id="state" required disabled onchange="enableCity()">
+                                    <option value="" disabled selected>Select</option>
+                                    <option value="permanent">jgfjgs</option>
+                                    <option value="permanent">hvjhv</option>
+                                    <option value="permanent">sdkbbd</option>
+                                    <option value="permanent">kgwiusg</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="city" placeholder="abc" required>
+                                <label for="city">City</label>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="workLocation" placeholder="abc" required>
+                                <label for="workLocation">Company Address</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control validate-numeric" id="adharNo" placeholder="abc"
+                                    pattern="^[2-9][0-9]{11}$" maxlength="12" required>
+                                <label for="adharNo">Adhar Card .</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 d-flex align-items-end">
+                            <div class="form-floating attachbtn">
+                                <input type="file" id="myFile" name="filename" multiple>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <div class="form-floating">
+                                <textarea class="form-control" rows="8" id="remark" placeholder="Enter remarks"
+                                    required></textarea>
+                                <label for="remark" class="text-field">Remark</label>
+                            </div>
+                        </div>
+                        <!-- bank border -->
+                        <div class="text-start mt-3 heading-color"><u>Bank Details</u> </div>
+
+                        </h6>
+                        <!-- bank border -->
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="bankName" placeholder="abc" required>
+                                <label for="bankName">Bank Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control validate-numeric" id="accoutNo" placeholder="abc"
+                                    required>
+                                <label for="accoutNo">Bank Account No.</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="ifscCode" placeholder="abc" required>
+                                <label for="ifscCode">IFSC Code</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="ifscCode" placeholder="abc" required>
+                                <label for="ifscCode">Swift Code</label>
+                            </div>
+                        </div>
+                        <div class="text-start mt-3 heading-color"><u>Other Details</u> </div>
+
+                        <div class="main-div">
+                            <div class="row g-3">
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="relativeName" placeholder="abc"
+                                            required>
+                                        <label for="relativeName">Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control validate-numeric" id="relation"
+                                            placeholder="abc" required>
+                                        <label for="relation">Mobile No.</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="relativeMobileNo" placeholder="abc"
+                                            required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                                        <label for="relativeMobileNo">Email ID</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="relativeEmail" placeholder="abc"
+                                            required>
+                                        <label for="relativeEmail">Department</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="relativeEmail" placeholder="abc"
+                                            required>
+                                        <label for="relativeEmail">Designation</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-1 mt-3">
+                                    <div class="icon icon-plus" onclick="addRow(this)"><i class="fas fa-plus"></i>
+                                    </div>
+                                    <div class="icon icon-minus hidden" onclick="removeRow(this)"><i
+                                            class="fas fa-minus"></i></div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="justify-content-end  p-3 text-end">
+                        <button type="submit" class="btn btn-danger">Cancel</button>
+                        <button type="submit" class="btn btn-primary">submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            function enableState() {
+                var countrySelect = document.getElementById("country");
+                var stateSelect = document.getElementById("state");
+
+                // Enable state dropdown if a country is selected
+                stateSelect.disabled = countrySelect.value === "";
+
+                // Reset state and city dropdowns
+                stateSelect.selectedIndex = 0;
+                document.getElementById("city").selectedIndex = 0;
+
+                // Call enableCity to update city dropdown based on state selection
+                enableCity();
+            }
+
+            function enableCity() {
+                var stateSelect = document.getElementById("state");
+                var citySelect = document.getElementById("city");
+
+                // Enable city dropdown if a state is selected
+                citySelect.disabled = stateSelect.value === "";
+
+                // Reset city dropdown
+                citySelect.selectedIndex = 0;
+            }
+        </script>
+
+</body>
+
+</html>
