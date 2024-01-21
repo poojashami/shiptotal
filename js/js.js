@@ -59,7 +59,7 @@ $(document).ready(function () {
 
 // header
 $(function () {
-  $("#header").load("header.html");
+  $("#header").load("index.html");
   // $("#footer").load("footer.html");
 });
 
